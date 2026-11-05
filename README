@@ -1,0 +1,3 @@
+Site de convite de aniversário responsivo, desenvolvido com HTML, CSS e JavaScript puro (sem frameworks). O layout é dividido em seções full-screen (capa, informações do evento e playlist), com reorganização de blocos via Flexbox e CSS Grid conforme o tamanho da tela. A página de sugestões de presentes conta com um carrossel de cards com scroll-snap, sincronizado via JavaScript com indicadores de posição clicáveis. O projeto também integra uma playlist externa do Spotify e QR/paleta de dress code como recursos visuais complementares.
+
+Tecnologias: HTML5, CSS3 (Grid, Flexbox, variáveis CSS, media queries), JavaScript (DOM, eventos de scroll)

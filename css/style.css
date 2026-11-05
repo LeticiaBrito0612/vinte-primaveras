@@ -1,0 +1,277 @@
+/* =========================================================
+   Tokens
+   ========================================================= */
+:root {
+  --creme: #F5F0C8;
+  --oliva: #8C8A5E;
+  --vinho: #A64A4A;
+  --listra: #572526;
+  --marrom: #4A2E26;
+  --marrom-suave: #7A5C4E;
+
+  --fonte-script: 'Playball', 'Snell Roundhand', 'Brush Script MT', cursive;
+  --fonte-serif: 'Cormorant Garamond', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; width: 100%; }
+
+body {
+  font-family: var(--fonte-serif);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--marrom);
+  background: var(--marrom);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, .presentes-carrossel:focus-visible {
+  outline: 3px solid var(--creme);
+  outline-offset: 5px;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   Seções da página inicial: cada uma ocupa a tela inteira.
+   (100vh como reserva; 100svh respeita a barra do navegador no celular)
+   ========================================================= */
+.secao {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 800px) {
+  .secao {
+    flex-direction: row;
+    gap: clamp(3rem, 8vw, 8rem);
+    padding: 3rem 6vw;
+  }
+}
+
+.texto-script {
+  max-width: 26rem;
+  margin: 0;
+  font-family: var(--fonte-script);
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  line-height: 1.9;
+}
+
+/* ---------- 1. Capa ---------- */
+.capa {
+  background-color: #1d2318;
+  background-image: url('../img/capa-flores.jpg');
+}
+.etiqueta {
+  width: min(760px, 88%);
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.4));
+}
+
+/* ---------- 2. Lugar e hora ---------- */
+.local {
+  background-color: var(--creme);
+  background-image: url('../img/fundo-creme.jpg');
+}
+.local-texto { max-width: 30rem; }
+.titulo {
+  margin: 0 0 1.2rem;
+  font-family: var(--fonte-script);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1.2;
+}
+.local-texto p {
+  margin: 0.5rem 0;
+  font-family: var(--fonte-script);
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+}
+.local-texto .contagem {
+  margin-top: 1.6rem;
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--marrom-suave);
+}
+.calendario { width: min(360px, 78vw); }
+
+/* ---------- 3. Dress code ---------- */
+.dress {
+  background-color: #E8A9B4;
+  background-image: url('../img/fundo-vestidos.jpg');
+}
+.cartao-renda { width: min(320px, 72vw); }
+
+/* ---------- 4. Presentes ---------- */
+.presente {
+  background-color: var(--oliva);
+  background-image: url('../img/fundo-verde.jpg');
+  color: var(--creme);
+}
+.polaroid {
+  display: block;
+  width: min(380px, 78vw);
+  transform: rotate(5deg);
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.35));
+  transition: transform 0.35s ease;
+}
+.polaroid:hover, .polaroid:focus-visible { transform: rotate(0) scale(1.04); }
+
+/* ---------- 5. Playlist ---------- */
+.playlist {
+  background-color: var(--vinho);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--vinho) 0, var(--vinho) 34px,
+    var(--listra) 34px, var(--listra) 51px
+  );
+  color: var(--creme);
+}
+.texto-playlist {
+  max-width: 21rem;
+  margin: 0;
+  font-family: var(--fonte-script);
+  font-size: clamp(1.7rem, 3.6vw, 2.3rem);
+  line-height: 1.3;
+}
+.botao-playlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--fonte-script);
+  font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+}
+.disco {
+  width: min(280px, 60vw);
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.45));
+}
+.botao-playlist:hover .disco,
+.botao-playlist:focus-visible .disco { animation: giro 4s linear infinite; }
+@keyframes giro { to { transform: rotate(360deg); } }
+
+/* =========================================================
+   Página de presentes
+   ========================================================= */
+.presentes-pagina {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  padding: 3rem 1.25rem;
+  background-color: var(--creme);
+  background-image: url('../img/fundo-creme.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.presentes-titulo {
+  margin: 0;
+  font-family: var(--fonte-script);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  text-align: center;
+}
+
+.presentes-palco {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 560px;
+  justify-content: center;
+}
+
+.presentes-carrossel {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 380px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.presentes-carrossel::-webkit-scrollbar { display: none; }
+
+.presentes-card {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  min-height: 340px;
+  padding: 2.2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--marrom);
+  color: var(--creme);
+  border: 1px solid rgba(245, 240, 200, 0.35);
+  border-radius: 22px;
+  box-shadow: 0 16px 28px -14px rgba(0, 0, 0, 0.5);
+}
+
+.presentes-intro { margin: 0 0 1rem; font-family: var(--fonte-script); font-size: 1.5rem; line-height: 1.7; }
+.presentes-dica { font-style: italic; opacity: 0.8; }
+.presentes-card-titulo { margin: 0 0 1.1rem; font-family: var(--fonte-script); font-weight: 400; font-size: 2.1rem; }
+.presentes-lista { list-style: none; margin: 0 0 1rem; padding: 0; font-size: 1.35rem; line-height: 1.8; }
+.presentes-legenda { margin: 0; font-size: 1rem; font-style: italic; opacity: 0.85; }
+
+.seta {
+  display: none;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--marrom);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--marrom);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.seta:hover:not(:disabled) { background: var(--marrom); color: var(--creme); }
+.seta:disabled { opacity: 0.3; cursor: default; }
+@media (min-width: 700px) { .seta { display: block; } }
+
+.presentes-dots { display: flex; gap: 10px; }
+.dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(74, 46, 38, 0.3);
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.25s;
+}
+.dot.is-active { background: var(--marrom); transform: scale(1.3); }
+
+.presentes-voltar {
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--marrom);
+  padding-bottom: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .botao-playlist:hover .disco, .botao-playlist:focus-visible .disco { animation: none; }
+  .polaroid { transition: none; }
+  .presentes-carrossel { scroll-behavior: auto; }
+}
