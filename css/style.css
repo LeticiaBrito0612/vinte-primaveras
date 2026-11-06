@@ -1,6 +1,3 @@
-/* =========================================================
-   Tokens
-   ========================================================= */
 :root {
   --creme: #F5F0C8;
   --oliva: #8C8A5E;
@@ -33,10 +30,6 @@ a:focus-visible, button:focus-visible, .presentes-carrossel:focus-visible {
   border-radius: 6px;
 }
 
-/* =========================================================
-   Seções da página inicial: cada uma ocupa a tela inteira.
-   (100vh como reserva; 100svh respeita a barra do navegador no celular)
-   ========================================================= */
 .secao {
   width: 100%;
   min-height: 100vh;
@@ -69,7 +62,7 @@ a:focus-visible, button:focus-visible, .presentes-carrossel:focus-visible {
   line-height: 1.9;
 }
 
-/* ---------- 1. Capa ---------- */
+/* Capa */
 .capa {
   background-color: #1d2318;
   background-image: url('../img/capa-flores.jpg');
@@ -79,7 +72,7 @@ a:focus-visible, button:focus-visible, .presentes-carrossel:focus-visible {
   filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.4));
 }
 
-/* ---------- 2. Lugar e hora ---------- */
+/* Lugar e hora */
 .local {
   background-color: var(--creme);
   background-image: url('../img/fundo-creme.jpg');
@@ -106,14 +99,14 @@ a:focus-visible, button:focus-visible, .presentes-carrossel:focus-visible {
 }
 .calendario { width: min(360px, 78vw); }
 
-/* ---------- 3. Dress code ---------- */
+/* Sessão de Dress code */
 .dress {
   background-color: #E8A9B4;
   background-image: url('../img/fundo-vestidos.jpg');
 }
 .cartao-renda { width: min(320px, 72vw); }
 
-/* ---------- 4. Presentes ---------- */
+/* Sessão de Presentes */
 .presente {
   background-color: var(--oliva);
   background-image: url('../img/fundo-verde.jpg');
@@ -128,7 +121,7 @@ a:focus-visible, button:focus-visible, .presentes-carrossel:focus-visible {
 }
 .polaroid:hover, .polaroid:focus-visible { transform: rotate(0) scale(1.04); }
 
-/* ---------- 5. Playlist ---------- */
+/* Playlist */
 .playlist {
   background-color: var(--vinho);
   background-image: repeating-linear-gradient(
@@ -161,9 +154,7 @@ a:focus-visible, button:focus-visible, .presentes-carrossel:focus-visible {
 .botao-playlist:focus-visible .disco { animation: giro 4s linear infinite; }
 @keyframes giro { to { transform: rotate(360deg); } }
 
-/* =========================================================
-   Página de presentes
-   ========================================================= */
+/* Página de presentes */
 .presentes-pagina {
   width: 100%;
   min-height: 100vh;
